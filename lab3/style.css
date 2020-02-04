@@ -1,0 +1,50 @@
+body {
+	text-align: center;
+	margin: 0px;
+}
+.title {
+	background-color: black;
+	color: lightgrey;
+	text-align: left;
+	padding: 10px 10px 10px 40px;
+}
+.title h1{
+	margin: 0px;
+}
+#inputField {
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+}
+#addButton{
+	background-color: blue;
+	color:white;
+	height: 40px;
+}
+
+table{
+	text-align: left;
+	margin-top: 30px;
+	border: 1px solid lightgrey;
+	padding-left: 10px;
+	border-radius: 5px;
+}
+
+#toDOList{
+	width: 80%;
+	margin-left: 10%;
+}
+.check, .delete{
+	width:70px;
+}
+.delete button{
+	background-color: red;
+	color:white;
+	border-radius: 5px;
+}
+.undone p{
+	text-decoration: none;
+}
+.done p{
+	text-decoration: line-through;
+}
