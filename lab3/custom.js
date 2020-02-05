@@ -2,14 +2,11 @@
 
 // })
 var input = document.getElementById('inputField');
-var addButton = document.getElementById('addButton');
-addButton.addEventListener("click", addNewTask);
 var toDoList = document.getElementById('toDOList');
+var addButton = document.getElementById('addButton');
 
 
-function addNewTask()	{
-
-	
+addButton.addEventListener("click", () => {
 	if (input.value == "") {
 
 		 alert("Add title to new task");
@@ -34,9 +31,9 @@ function addNewTask()	{
 		taskTD.appendChild(taskName);
 
 		var deleteTD = item.insertCell(2);
-		deleteTD.classList.add('deleteButton');
+		deleteTD.classList.add('delete');
 		let deleteButton = document.createElement("button");
-		deleteButton.id = "delete";
+		// deleteButton.id = "delete";
 		deleteButton.innerHTML = 'Delete';
 		deleteButton.addEventListener("click", deleteTask);
 		deleteButton.classList.add('deleteButton');
@@ -44,24 +41,14 @@ function addNewTask()	{
 
 		input.value = ""
 	}
-	
-	
-}
+})
+
 
 var checkboxArray = document.querySelectorAll('.checkbox');
-var deleteArray = document.querySelectorAll('.deleteButton');
-
 for (var i = 0; i < checkboxArray.length; i++) {
   	checkboxArray[i].addEventListener("change", markAsDone);
 }
-
-
-for (var i = 0; i < deleteArray.length; i++) {
-  		deleteArray[i].addEventListener("click", deleteTask);
-}
-
-
-function markAsDone() {
+function markAsDone () {
   var isChecked = this.checked;
   console.log(this.parentElement.parentElement.rowIndex+1)
   if (isChecked) { 
@@ -73,10 +60,20 @@ function markAsDone() {
   }
 }
 
-function deleteTask() {
-	var i = this.parentElement.parentElement;
-	i.style.display = "none";
-	// console.log(i)
-	// toDoList.deleteRow(i);
+
+
+var deleteArray = document.querySelectorAll('.deleteButton');
+for (var i = 0; i < deleteArray.length; i++) {
+  		deleteArray[i].addEventListener("click", deleteTask);
 }
+function deleteTask () {
+	var i = this.parentElement.parentElement.rowIndex;
+	toDoList.deleteRow(i);
+}
+
+
+
+var deleteAllButton = document.getElementById('deleteAllButton');
+deleteAllButton.addEventListener("click", () => { toDoList.innerHTML = ""; });
+
 

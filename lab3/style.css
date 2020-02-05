@@ -16,7 +16,7 @@ body {
 	height: 40px;
 	border-radius: 5px;
 }
-#addButton{
+#addButton, #deleteAllButton{
 	background-color: blue;
 	color:white;
 	height: 40px;
