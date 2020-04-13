@@ -1,4 +1,4 @@
-from django.shortcuts import render
+rfrom django.shortcuts import render
 from django.http.response import JsonResponse
 from django.http.response import HttpResponse
 from api.models import Category
